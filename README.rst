@@ -6,12 +6,16 @@
 mx.lims
 ==============================================================================
 
-Tell me what your product does
+This is a research & development project for Laboratory Information Management System based on Python and Plone 5.
+
+The goal is to help independent software developers and companies to efficiently come up with a comprehensive framework for LIMS comforming to ISO standards.
 
 Features
 --------
 
-- Can be bullet points
+- Dexterity types
+- Full control panel support
+- etc. (to be completed)
 
 
 Examples
@@ -32,7 +36,7 @@ Translations
 
 This product has been translated into
 
-- Klingon (thanks, K'Plai)
+- Chinese (thanks, Robert Liu)
 
 
 Installation
