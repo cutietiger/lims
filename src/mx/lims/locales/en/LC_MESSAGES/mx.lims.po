@@ -1,0 +1,414 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-16 06:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: mx.lims\n"
+
+#: ../behaviors/organization.py:48
+msgid "Account Name"
+msgstr ""
+
+#: ../behaviors/organization.py:53
+msgid "Account Number"
+msgstr ""
+
+#: ../behaviors/organization.py:43
+msgid "Account Type"
+msgstr ""
+
+#: ../content/limssetup.py:27
+msgid "Accounting"
+msgstr ""
+
+#: ../content/method.py:22
+msgid "Accredited"
+msgstr ""
+
+#: ../adapters/settings.py:41
+#: ../utilities/settings.py:41
+msgid "Activate"
+msgstr ""
+
+#: ../adapters/settings.py:31
+#: ../profiles/default/workflows/lims_inactive_workflow/definition.xml
+#: ../profiles/default/workflows/lims_one_state_workflow/definition.xml
+msgid "Active"
+msgstr ""
+
+#: ../browser/methods.py:28
+#: ../controlpanel/instruments.py:20
+#: ../controlpanel/suppliers.py:18
+msgid "Add"
+msgstr ""
+
+#: ../behaviors/organization.py:18
+#: ../content/lab.py:40
+msgid "Address"
+msgstr ""
+
+#: ../adapters/settings.py:47
+#: ../browser/folderview.py:166
+#: ../utilities/settings.py:47
+msgid "All"
+msgstr ""
+
+#: ../content/limssetup.py:24
+msgid "Allow Lab Clerks to create and edit clients"
+msgstr ""
+
+#: ../content/limssetup.py:39
+msgid "Analyses"
+msgstr ""
+
+#: ../content/limssetup.py:18
+msgid "Automatic log-off"
+msgstr ""
+
+#: ../behaviors/organization.py:63
+msgid "Bank Branch"
+msgstr ""
+
+#: ../behaviors/organization.py:38
+#: ../behaviors/supplier.py:16
+msgid "Bank Details"
+msgstr ""
+
+#: ../behaviors/organization.py:58
+msgid "Bank Name"
+msgstr ""
+
+#: ../behaviors/organization.py:32
+msgid "Billing Address"
+msgstr ""
+
+#: ../profiles/default/types/Instrument.xml
+msgid "Calibration Certificates"
+msgstr ""
+
+#: ../profiles/default/types/Instrument.xml
+msgid "Calibrations"
+msgstr ""
+
+#: ../browser/folderview.py:87
+msgid "Changes saved."
+msgstr ""
+
+#: ../content/method.py:23
+msgid "Check if the method has been accredited"
+msgstr ""
+
+#: ../profiles/default/types/Supplier.xml
+msgid "Contacts"
+msgstr ""
+
+#: ../content/limssetup.py:33
+msgid "Currency"
+msgstr ""
+
+#: ../adapters/settings.py:33
+#: ../utilities/settings.py:33
+msgid "Deactivate"
+msgstr ""
+
+#: ../content/lab.py:38
+msgid "Department"
+msgstr ""
+
+#: ../adapters/settings.py:19
+#: ../utilities/settings.py:19
+msgid "Description"
+msgstr ""
+
+#: ../content/limssetup.py:53
+msgid "Display individual sample partitions"
+msgstr ""
+
+#: ../adapters/settings.py:39
+#: ../utilities/settings.py:39
+msgid "Dormant"
+msgstr ""
+
+#: ../profiles/default/types/Instrument.xml
+#: ../profiles/default/types/Instrument_Type.xml
+#: ../profiles/default/types/Instrument_Types.xml
+msgid "Edit"
+msgstr ""
+
+#: ../behaviors/organization.py:21
+#: ../content/lab.py:57
+msgid "Email Address"
+msgstr ""
+
+#: ../content/limssetup.py:42
+msgid "Enable the Sampling workflow"
+msgstr ""
+
+#: ../content/limssetup.py:46
+msgid "Enable the Schedule a Sampling functionality"
+msgstr ""
+
+#: ../behaviors/supplier.py:26
+msgid "IBN"
+msgstr ""
+
+#: ../browser/folderview.py:145
+msgid "ID"
+msgstr ""
+
+#: ../behaviors/procedure.py:18
+msgid "In-lab calibration procedure"
+msgstr ""
+
+#: ../profiles/default/workflows/lims_inactive_workflow/definition.xml
+msgid "Inactive"
+msgstr ""
+
+#: ../content/limssetup.py:30
+msgid "Include and display pricing information"
+msgstr ""
+
+#: ../configure.zcml:26
+msgid "Install LIMS (mx.lims)"
+msgstr ""
+
+#: ../behaviors/procedure.py:19
+msgid "Instructions for in-labe regular calibration ruotines indented for analysts"
+msgstr ""
+
+#: ../profiles/default/types/Instrument.xml
+msgid "Instrument"
+msgstr ""
+
+#: ../behaviors/configure.zcml:10
+msgid "Instrument Procedure"
+msgstr ""
+
+#: ../content/instrument.py:12
+#: ../profiles/default/types/Instrument_Type.xml
+msgid "Instrument Type"
+msgstr ""
+
+#: ../profiles/default/types/Instrument_Types.xml
+msgid "Instrument Types"
+msgstr ""
+
+#: ../adapters/settings.py:21
+#: ../controlpanel/instruments.py:14
+#: ../profiles/default/controlpanel.xml
+msgid "Instruments"
+msgstr ""
+
+#: ../content/lab.py:36
+msgid "Job Title"
+msgstr ""
+
+#: ../configure.zcml:26
+msgid "LIMS (mx.lims)"
+msgstr ""
+
+#: ../profiles/default/controlpanel.xml
+#: ../profiles/default/types/LIMS_Setup.xml
+msgid "LIMS Setup"
+msgstr ""
+
+#: ../profiles/default/types/Lab.xml
+msgid "Lab"
+msgstr ""
+
+#: ../profiles/default/controlpanel.xml
+msgid "Laboratory Information"
+msgstr ""
+
+#: ../browser/folderview.py:147
+msgid "Last modified"
+msgstr ""
+
+#: ../adapters/settings.py:23
+#: ../utilities/settings.py:23
+msgid "Manual"
+msgstr ""
+
+#: ../content/method.py:17
+msgid "Manual entry of results"
+msgstr ""
+
+#: ../adapters/settings.py:16
+#: ../content/instrument.py:17
+#: ../profiles/default/types/Method.xml
+msgid "Method"
+msgstr ""
+
+#: ../content/method.py:14
+msgid "Method Instructions"
+msgstr ""
+
+#: ../adapters/settings.py:80
+#: ../browser/methods.py:22
+#: ../profiles/default/types/Methods.xml
+msgid "Methods"
+msgstr ""
+
+#: ../behaviors/supplier.py:21
+msgid "NIB"
+msgstr ""
+
+#: ../browser/folderview.py:93
+msgid "No items selected"
+msgstr ""
+
+#: ../behaviors/configure.zcml:16
+msgid "Organization Behavior"
+msgstr ""
+
+#: ../behaviors/configure.zcml:16
+msgid "Organization Details"
+msgstr ""
+
+#: ../content/limssetup.py:13
+msgid "Password lifetime"
+msgstr ""
+
+#: ../behaviors/organization.py:24
+#: ../content/lab.py:43
+msgid "Physical Address"
+msgstr ""
+
+#: ../behaviors/organization.py:28
+#: ../content/lab.py:46
+msgid "Postal Address"
+msgstr ""
+
+#: ../behaviors/procedure.py:13
+msgid "Procedure"
+msgstr ""
+
+#: ../behaviors/configure.zcml:10
+msgid "Procedure Behavior"
+msgstr ""
+
+#: ../behaviors/supplier.py:31
+msgid "SWIFT Code"
+msgstr ""
+
+#: ../content/limssetup.py:10
+msgid "Security"
+msgstr ""
+
+#: ../content/limssetup.py:34
+msgid "Select the currency the site will use to display prices."
+msgstr ""
+
+#: ../content/limssetup.py:43
+msgid "Select this to activate the sample collection workflow steps."
+msgstr ""
+
+#: ../content/limssetup.py:47
+msgid "Select this to allow a Sampling Coordinator to schedule a sampling. This functionality only takes effect when 'Sampling workflow' is active"
+msgstr ""
+
+#: ../browser/folderview.py:148
+msgid "State"
+msgstr ""
+
+#: ../content/fields.py:11
+#: ../content/lab.py:15
+msgid "Street Address"
+msgstr ""
+
+#: ../content/fields.py:12
+#: ../content/lab.py:16
+msgid "Street Address."
+msgstr ""
+
+#: ../content/instrument.py:23
+#: ../profiles/default/types/Supplier.xml
+#: ../utilities/settings.py:137
+msgid "Supplier"
+msgstr ""
+
+#: ../behaviors/configure.zcml:22
+msgid "Supplier Behavior"
+msgstr ""
+
+#: ../behaviors/configure.zcml:22
+msgid "Supplier Details"
+msgstr ""
+
+#: ../controlpanel/suppliers.py:12
+#: ../profiles/default/controlpanel.xml
+#: ../profiles/default/types/Suppliers.xml
+msgid "Suppliers"
+msgstr ""
+
+#: ../content/method.py:15
+msgid "Technical description and instructions intended for analysts."
+msgstr ""
+
+#: ../content/limssetup.py:14
+msgid "The number of days before a password expires. 0 disables password expiry"
+msgstr ""
+
+#: ../content/limssetup.py:19
+msgid "The number of minutes before a user is automatically logged off.0 disables automatic log-off"
+msgstr ""
+
+#: ../content/method.py:18
+msgid "The results for the Analysis Services that use this method can be set manually"
+msgstr ""
+
+#: ../browser/folderview.py:146
+msgid "Title"
+msgstr ""
+
+#: ../content/limssetup.py:54
+msgid "Turn this on if you want to work with sample partitions"
+msgstr ""
+
+#: ../browser/folderview.py:144
+msgid "Type"
+msgstr ""
+
+#: ../configure.zcml:35
+msgid "Uninstall LIMS (mx.lims)"
+msgstr ""
+
+#: ../behaviors/organization.py:13
+#: ../content/lab.py:51
+msgid "VAT Number"
+msgstr ""
+
+#: ../profiles/default/types/Instrument.xml
+#: ../profiles/default/types/Instrument_Type.xml
+#: ../profiles/default/types/Instrument_Types.xml
+msgid "View"
+msgstr ""
+
+#: ../behaviors/supplier.py:11
+msgid "Website"
+msgstr ""
+
+#: ../content/fields.py:17
+#: ../content/lab.py:21
+msgid "Zip Code"
+msgstr ""
+
+#: ../content/fields.py:18
+#: ../content/lab.py:22
+msgid "Zip or Postal Code."
+msgstr ""
+
+#. Default: "Content listing"
+#: ../browser/templates/listing_table.pt:60
+#: ../browser/templates/table.pt:60
+msgid "summary_content_listing"
+msgstr ""

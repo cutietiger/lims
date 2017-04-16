@@ -1,0 +1,148 @@
+@import (less) "css/jquery.dataTables.min.css";
+@import (less) "css/buttons.dataTables.min.css";
+@import (less) "css/select.dataTables.min.css";
+
+.dataTables_length label select {
+  display: inline-block;
+  width: auto;
+}
+
+.table-toolbar {
+  float: left;
+  padding-right: 5px;
+  label {
+    margin-right: 10px;
+  }
+}
+
+table.lims-listing-table {
+  border: 0;
+  >tfoot, >tbody {
+    >tr >td {
+        border: 0;
+    }
+  }
+
+  >thead {
+    >tr > th, >tr >td {
+        border: 0;
+        border-bottom: 1px solid #111;
+        white-space: nowrap;
+    }
+  }
+
+  >tfoot {
+    >tr > th, >tr >td {
+        border: 0;
+        border-top: 1px solid #111;
+    }
+  }
+}
+
+article#content {
+.btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  > :first-child.btn {
+    margin-left: 0px;
+  }
+  .btn + .btn {
+    margin-left: -1px;
+  }
+  > :first-child:not(:last-child).btn {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  > :not(:first-child):not(:last-child).btn {
+    border-radius: 0;
+  }
+  > :last-child:not(:first-child).btn {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
+.hover() {
+  color: #333;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.selected() {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4285;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    &:focus, &:hover {
+      .hover;
+      border-bottom: 1px solid;
+    }
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    &:focus, &:hover {
+      .selected;
+    }
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    &:focus, &:hover {
+      color: #fff;
+      background-color: #286090;
+      border-color: #204d74;
+    }
+}
+
+a.selected {
+  .selected;
+  z-index: 2;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+h1.list-title, .list-actions {
+  display: inline-block;
+}
+
+.workflow_action_buttons {
+  clear: both;
+}
+}
+
+.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

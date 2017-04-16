@@ -1,0 +1,59 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.zope.org/plone"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="mx.lims">
+
+  <i18n:registerTranslations directory="locales" />
+
+  <includeDependencies package="." />
+
+  <include file="permissions.zcml" />
+  <include package=".browser" />
+  <include package=".behaviors" />
+  <include package=".adapters" />
+  <include package=".controlpanel" />
+  <include package=".utilities" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="LIMS (mx.lims)"
+      directory="profiles/default"
+      description="Install LIMS (mx.lims)"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Uninstall LIMS (mx.lims)"
+      directory="profiles/uninstall"
+      description="Uninstall LIMS (mx.lims)"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <genericsetup:importStep
+      name="mx.lims.various"
+      title="mx.lims: Miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler=".setuphandlers.setupVarious">
+    <depends name="content" />
+  </genericsetup:importStep>
+
+  <include file="upgrades.zcml" />
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="mx.lims-hiddenprofiles" />
+
+  <utility
+      name="mx.lims.vocabularies.Currencies"
+      component="mx.lims.vocabularies.CurrenciesVocabulary" />
+
+  <utility
+      name="mx.lims.vocabularies.Suppliers"
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      component="mx.lims.vocabularies.SuppliersVocabulary" />
+</configure>

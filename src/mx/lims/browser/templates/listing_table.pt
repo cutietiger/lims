@@ -1,0 +1,126 @@
+<form name="lims_listing_form" method="post" action="workflow_action"
+  i18n:domain="mx.lims"
+  tal:attributes="id form_id"
+  tal:define="form_id view/listing/form_id;
+              table_only python:False;
+              nosortclass view/get_nosort_class;
+              portal context/@@plone_portal_state/portal;
+              review_state_id python:request.get(form_id+'_review_state', 'default');
+              review_state python:[t for t in view.listing.review_states
+              if t['id'] == review_state_id];
+              review_state python:review_state and review_state[0]
+              or view.review_states[0];
+              tabindex view/tabindex;
+              nr_cols python:len(review_state['columns']);
+              nr_cols python:view.listing.show_select_column and nr_cols + 1 or nr_cols;
+              nr_cols python:view.listing.show_sort_column and nr_cols + 1 or nr_cols;
+              nr_cols python:str(nr_cols);">
+
+  <input tal:replace="structure context/@@authenticator/authenticator"/>
+  <input type="hidden" name="submitted" value="1"/>
+  <input type="hidden" name="form_id" tal:attributes="value form_id"/>
+
+  <input type="hidden" name="view_url"
+         tal:attributes="value view/listing/view_url"/>
+  <input type="hidden" name="portal_type"
+         tal:attributes="value view/context/portal_type"/>
+
+  <input type="hidden"
+         tal:attributes="name python:form_id+'_sort_on';
+                         value python:request.get(form_id+'_sort_on', 'id')"/>
+  <input type="hidden" tal:omit-tag="python:table_only"
+         tal:attributes="name python:form_id+'_sort_order';
+                         value python:request.get(form_id+'_sort_order', 'ascending')"/>
+
+  <div class="dataTables_wrapper">
+    <div class="table-toolbar btn-group">
+      <tal:review_states repeat="state view/listing/review_states">
+        <a
+          tal:define="state_id state/id" 
+          tal:attributes="href python:view.listing.GET_url(review_state=state['id']);
+                          value state_id;
+                          id state/id;
+                          class python:request.get(form_id + '_review_state', 
+                          'default') == state_id and 'selected btn btn-default' or 'btn btn-default'"
+          tal:content="structure state/title" />
+      </tal:review_states>
+    </div>
+    <div class="dataTables_filter">
+      <tal:filters_enabled
+        tal:define="term python:request.get(form_id+'_filter', '');"
+        tal:condition="python:hasattr(view.listing,'filter_indexes') and 
+                       view.listing.filter_indexes">
+        <label> Search:
+          <input class="filter-search-input" type="search" autocomplete="off" 
+            tal:attributes="name python:form_id+'_filter';
+                            value python:term;"/>
+        </label>
+      </tal:filters_enabled>
+    </div>
+    <table
+      summary="Content listing"
+      cellpadding="0"
+      tal:attributes="class python:'lims-listing-table display dataTable';
+                      form_id view/listing/form_id"
+      i18n:attributes="summary summary_content_listing;"
+      tal:define="columns view/listing/columns;
+                  column_list python:review_state['columns']">
+      <thead>
+        <tal:comment replace="nothing">
+           *******************************
+           Column Headers
+           *******************************
+        </tal:comment>
+        <tr>
+          <th class="nosort column"
+              id="foldercontents-order-column"
+              tal:condition="view/listing/show_sort_column"/>
+          <th class="nosort column"
+              tal:condition="view/listing/show_select_column">
+            <input
+              type="checkbox"
+              class="noborder"
+              tal:condition="view/listing/show_select_all_checkbox"
+              tal:attributes="id string:${view/listing/form_id}_select_all" />
+          </th>
+          <tal:col repeat="column column_list">
+            <th class="sorting">
+              <span tal:replace="structure python:view.listing.columns[column]['title']" />
+            </th>
+          </tal:col>
+        </tr>
+      </thead>
+
+      <tbody class="item-listing-tbody"
+             tal:condition="view/items"
+             tal:define="restricted_cats python:view.listing.restricted_cats(view.batch);">
+        <tal:cats 
+          tal:repeat="cat python: view.listing.categories+['None', ] 
+                      if view.listing.categories else ['None', ]">
+          <tal:show_this_category tal:condition="python: cat not in restricted_cats">
+            <span tal:replace="structure python:view.rendered_items(cat)"/>
+          </tal:show_this_category>
+        </tal:cats>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td tal:attributes="colspan nr_cols">
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <span class="workflow_action_buttons"
+          tal:condition="python:len(view.batch) > 0"
+          tal:define="actions view/listing/get_workflow_actions">
+      <span tal:omit-tag="python:True" tal:repeat="action actions"
+            tal:condition="view/listing/show_workflow_action_buttons">
+        <input type="submit"
+               name="workflow_action_button" 
+               tal:attributes="id python:action['id']+'_transition';
+                               value action/title;
+                               transition action/id;" />
+      </span>
+    </span>
+  </div>
+</form>

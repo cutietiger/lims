@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="mx.lims">
+
+  <plone:behavior
+      title="Procedure Behavior"
+      description="Instrument Procedure"
+      provides=".procedure.IProcedure"
+      />
+
+  <plone:behavior
+      title="Organization Behavior"
+      description="Organization Details"
+      provides=".organization.IOrganization"
+      />
+
+  <plone:behavior
+      title="Supplier Behavior"
+      description="Supplier Details"
+      provides=".supplier.ISupplier"
+      />
+</configure>

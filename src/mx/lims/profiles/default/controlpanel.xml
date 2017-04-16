@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<object
+  name="portal_controlpanel"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  i18n:domain="mx.lims">
+  <configlet
+    title="LIMS Setup"
+    action_id="lims_setup"
+    appId="mx.lims"
+    category="Products"
+    condition_expr=""
+    icon_expr=""
+    url_expr="string:$portal_url/lims_setup/edit"
+    visible="True"    
+    i18n:attributes="title">
+    <permission>Manage portal</permission>
+  </configlet>
+  <configlet 
+    title="Laboratory Information" 
+    action_id="lims_labinfo"
+    appId="mx.lims" 
+    category="Products" 
+    condition_expr=""
+    icon_expr="string:++resource++mx.lims.images/laboratory.png"
+    url_expr="string:$portal_url/lims_setup/laboratory/edit"
+    visible="True"
+    i18n:attributes="title">
+    <permission>Manage portal</permission>
+  </configlet>
+  <configlet 
+    title="Instruments" 
+    action_id="lims_instruments"
+    appId="mx.lims" 
+    category="Products" 
+    condition_expr=""
+    icon_expr="string:++resource++mx.lims.images/instrument.png"
+    url_expr="string:$portal_url/lims_setup/instruments"
+    visible="True"
+    i18n:attributes="title">
+    <permission>Manage portal</permission>
+  </configlet>
+  <configlet 
+    title="Suppliers" 
+    action_id="lims_suppliers"
+    appId="mx.lims" 
+    category="Products" 
+    condition_expr=""
+    url_expr="string:$portal_url/lims_setup/suppliers"
+    visible="True"
+    i18n:attributes="title">
+    <permission>LIMS: Manage Lims</permission>
+  </configlet>
+</object>

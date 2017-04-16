@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<registry>
+  <!-- resource definitions -->
+  <records prefix="plone.resources/highcharts"
+         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++mx.lims/js/highcharts.js</value>
+  </records>
+  <records prefix="plone.resources/datatables.net"
+         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++mx.lims/js/jquery.dataTables.min.js</value>
+    <value key="css">
+      <element>++plone++mx.lims/css/jquery.dataTables.min.css</element>
+    </value>
+  </records>
+  <records prefix="plone.resources/datatables.net-buttons"
+         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++mx.lims/js/dataTables.buttons.min.js</value>
+    <value key="css">
+      <element>++plone++mx.lims/css/buttons.dataTables.min.css</element>
+    </value>
+  </records>
+  <records prefix="plone.resources/datatables.net-select"
+         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++mx.lims/js/dataTables.select.min.js</value>
+    <value key="css">
+      <element>++plone++mx.lims/css/select.dataTables.min.css</element>
+    </value>
+  </records>
+  <records prefix="plone.resources/datatables.net-colvis"
+         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++mx.lims/js/buttons.colVis.min.js</value>
+  </records>
+  <records prefix="plone.resources/lims-mockup"
+         interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++mx.lims/pattern.js</value>
+    <value key="css">
+      <element>++plone++mx.lims/pattern.less</element>
+    </value>
+  </records>
+
+  <!-- bundle definition -->
+  <records prefix="plone.bundles/mx-lims-bundle"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <element>lims-mockup</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="jscompilation">++plone++mx.lims/lims-compiled.js</value>
+    <value key="csscompilation">++plone++mx.lims/lims-compiled.css</value>
+    <value key="last_compilation">2017-02-08 00:00:00</value>
+    <value key="stub_js_modules">
+      <element>jquery</element>
+      <element>pat-base</element>
+      <element>highcharts</element>
+      <element>datatables.net</element>
+      <element>datatables.net-buttons</element>
+      <element>datatables.net-select</element>
+      <element>datatables.net-colvis</element>
+    </value>
+  </records>
+
+</registry>

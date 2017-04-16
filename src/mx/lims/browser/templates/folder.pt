@@ -1,0 +1,92 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="mx.lims">
+<body>
+<metal:content-title fill-slot="content-title">
+  <h1 class="list-title">
+    <img tal:condition="view/icon | nothing"
+         src="" tal:attributes="src view/icon"/>
+      <span style="position:relative;top:-0.2em;" class="documentFirstHeading" 
+            tal:content="view/title"/>
+  </h1>
+  <div class="list-actions">
+    <tal:add_actions repeat="add_item python:view.context_actions.keys()">
+      <a class="btn btn-primary" 
+         tal:attributes="href python:view.context_actions[add_item]['url']">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          <span tal:replace="python:add_item"/>
+      </a>
+    </tal:add_actions>
+  </div>
+</metal:content-title>
+
+<metal:content-core fill-slot="content-core">
+<form name="lims_listing_form" method="post" action="workflow_action"
+  i18n:domain="mx.lims"
+  tal:attributes="id form_id"
+  tal:define="form_id view/form_id;
+              table_only python:False;
+              portal context/@@plone_portal_state/portal;
+              review_state_id python:request.get(form_id+'_review_state', 'default');
+              review_state python:[t for t in view.review_states
+              if t['id'] == review_state_id];
+              review_state python:review_state and review_state[0]
+              or view.review_states[0];
+              nr_cols python:len(review_state['columns']);
+              nr_cols python:view.show_select_column and nr_cols + 1 or nr_cols;
+              nr_cols python:view.show_sort_column and nr_cols + 1 or nr_cols;
+              nr_cols python:str(nr_cols);">
+
+  <input tal:replace="structure context/@@authenticator/authenticator"/>
+  <input type="hidden" name="submitted" value="1"/>
+  <input type="hidden" name="form_id" tal:attributes="value form_id"/>
+
+  <input type="hidden" name="view_url"
+         tal:attributes="value view/view_url"/>
+  <input type="hidden" name="portal_type"
+         tal:attributes="value view/context/portal_type"/>
+
+  <input type="hidden"
+         tal:attributes="name python:form_id+'_sort_on';
+                         value python:request.get(form_id+'_sort_on', 'id')"/>
+  <input type="hidden" tal:omit-tag="python:table_only"
+         tal:attributes="name python:form_id+'_sort_order';
+                         value python:request.get(form_id+'_sort_order', 'ascending')"/>
+  <input type="hidden"
+         tal:attributes="name python:form_id+'_review_state';
+                         value review_state_id"/>
+
+<table class="lims-listing-table pat-datatable display" 
+  tal:attributes="data-pat-datatable python:view.options()"
+  tal:define="column_list python:review_state['columns']">
+  <thead>
+    <tr>
+      <th><input type="checkbox" name="select_all" value="1"></th>
+      <tal:col repeat="column column_list">
+        <th tal:attributes="class python:view.columns[column]['toggle'] and 'toggle' or ''">
+          <span tal:replace="structure python:view.columns[column]['title']" />
+        </th>
+      </tal:col>
+    </tr>
+  </thead>
+</table>
+<div class="workflow_action_buttons"
+     tal:define="actions view/get_workflow_actions_current">
+  <span tal:omit-tag="python:True"
+        tal:repeat="action actions"
+        tal:condition="view/show_workflow_action_buttons">
+    <a class="btn btn-primary"
+       name="workflow_action_button"
+       href="" 
+       tal:attributes="id python:action['id']+'_transition';
+                       transition action/id;"
+       tal:content="action/title">
+    </a>
+  </span>
+</div>
+</form>
+</metal:content-core>
+
+</body>
+</html>

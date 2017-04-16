@@ -1,0 +1,38 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="mx.lims">
+  <browser:page
+      name="folder_view"
+      for="mx.lims.interfaces.IInstruments"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      class=".instruments.InstrumentsView"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      for="*"
+      name="get_instruments"
+      class=".instruments.ajaxGetInstruments"
+      permission="zope2.Public"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      />
+
+  <browser:page
+      name="folder_view"
+      for="mx.lims.interfaces.ISuppliers"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      class=".suppliers.SuppliersView"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      for="*"
+      name="get_suppliers"
+      class=".suppliers.ajaxGetSuppliers"
+      permission="zope2.Public"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      />
+</configure>

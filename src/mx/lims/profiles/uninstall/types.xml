@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object meta_type="Plone Types Tool" name="portal_types">
+  <property name="title">Controls the available content types in LIMS</property>
+  <object meta_type="Dexterity FTI" name="LIMS Setup" remove="True" />
+  <object meta_type="Dexterity FTI" name="Instrument Types" remove="True" />
+  <object meta_type="Dexterity FTI" name="Instrument Type" remove="True" />
+</object>

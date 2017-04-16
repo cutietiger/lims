@@ -1,0 +1,38 @@
+<tal:items tal:repeat="item view/this_cat_batch">
+<tr tal:attributes="class python: 'odd' if repeat.item.odd else 'even'">
+  <input type="hidden" 
+    tal:attributes="id string:${item/uid}_row_data;
+                    value item/row_data|nothing;"/>
+  <td tal:condition="view/listing/show_sort_column" class="draggable">
+  </td>
+  <td tal:condition="view/listing/show_select_column"
+      style="width: 24px;">
+    <input type="checkbox"
+      class="noborder"
+      tal:attributes="
+        name string:${view/listing/select_checkbox_name}:list;
+        value item/uid;
+        id string:${view/listing/form_id}_cb_${item/uid}
+        item_title item/title;
+        alt item/title;
+        tabindex string:1000;
+        checked python: item.has_key('selected') and item['selected'] and 'yes' or '';
+        data-valid_transitions python:','.join(item.get('valid_transitions',[]))" />
+  </td>
+  <tal:cell tal:repeat="column view/listing/review_state/columns">
+  <tal:rowcolspan
+    tal:condition="python: 'toggle' not in view.listing.columns[column] or
+                       view.listing.columns[column].get('toggle', True)">
+    <td tal:define="
+            replace python:column in item['replace'] and
+                item['replace'][column] or '';
+            field_type python:'type' in view.listing.columns[column] and
+                view.listing.columns[column]['type'] or 'string';">
+      <span tal:condition="python:not item.get('structure',False)"
+            tal:content="python:item[column] if item[column] is not None else ''"
+            tal:attributes="class item/state_class"/>
+    </td>
+  </tal:rowcolspan>
+  </tal:cell>
+</tr>
+</tal:items>

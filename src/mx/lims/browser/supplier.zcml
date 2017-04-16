@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="mx.lims">
+
+    <browser:page
+      for="mx.lims.interfaces.ISupplier"
+      name="instruments"
+      class="mx.lims.browser.supplier.SupplierInstrumentsView"
+      permission="mx.lims.permissions.ManageSuppliers"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+    />
+</configure>

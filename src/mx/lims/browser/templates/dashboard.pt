@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="mx.lims">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<h3>Bar Chart</h3>
+<div class="pat-chart" tal:attributes="data-pat-chart python:view.spline('Patient History')" 
+  style="width:100%; height:400px;"></div>
+<div class="pat-chart" tal:attributes="data-pat-chart python:view.bar('Analyses')" 
+  style="width:100%; height:400px;"></div>
+</metal:content-core>
+
+</body>
+</html>

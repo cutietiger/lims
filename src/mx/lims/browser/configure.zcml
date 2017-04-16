@@ -1,0 +1,79 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="mx.lims">
+
+  <include package="z3c.form" file="meta.zcml" />
+  <include package="z3c.form" />
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="mx.lims"
+      directory="static"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      />
+
+  <browser:resourceDirectory
+      name="mx.lims.images"
+      directory="images"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      />
+
+  <plone:static
+      name="mx.lims"
+      type="plone"
+      directory="static"
+      />
+
+  <browser:page
+      name="lims-dashboard"
+      for="*"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      template="templates/dashboard.pt"
+      class=".views.DashboardView"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="folder_view"
+      for="mx.lims.interfaces.IMethods"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      class=".methods.MethodsView"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      for="*"
+      name="get_methods"
+      class="mx.lims.browser.methods.ajaxGetMethods"
+      permission="zope2.Public"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      />
+
+  <browser:page
+      for="*"
+      name="activate_objects"
+      class="mx.lims.browser.methods.ajaxActivate"
+      permission="zope2.Public"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+      />
+
+  <browser:page
+      for="*"
+      name="workflow_action"
+      class="mx.lims.browser.folderview.WorkflowAction"
+      permission="zope.Public"
+      layer="mx.lims.interfaces.IMxLimsLayer"
+    />
+
+  <include file="supplier.zcml"/>
+</configure>

@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="mx.lims">
+  <utility
+      provides=".interfaces.ISettingsFactory"
+      factory=".settings.MethodListSettingsFactory"
+      name="mx.lims.MethodListSettings"
+    />
+  <utility
+      provides=".interfaces.ISettingsFactory"
+      factory=".settings.InstrumentListSettingsFactory"
+      name="mx.lims.InstrumentListSettings"
+    />
+  <utility
+      provides=".interfaces.ISettingsFactory"
+      factory=".settings.SupplierListSettingsFactory"
+      name="mx.lims.SupplierListSettings"
+    />
+</configure>

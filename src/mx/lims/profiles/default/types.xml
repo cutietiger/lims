@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object meta_type="Plone Types Tool" name="portal_types">
+  <object meta_type="Dexterity FTI" name="LIMS Setup" />
+  <object meta_type="Dexterity FTI" name="Instrument Types" />
+  <object meta_type="Dexterity FTI" name="Instrument Type" />
+  <object meta_type="Dexterity FTI" name="Lab" />
+  <object meta_type="Dexterity FTI" name="Methods" />
+  <object meta_type="Dexterity FTI" name="Method" />
+  <object meta_type="Dexterity FTI" name="Instruments" />
+  <object meta_type="Dexterity FTI" name="Instrument" />
+  <object meta_type="Dexterity FTI" name="Suppliers" />
+  <object meta_type="Dexterity FTI" name="Supplier" />
+</object>

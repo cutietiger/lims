@@ -1,0 +1,79 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  i18n_domain="mx.lims">
+
+  <genericsetup:upgradeStep
+    title="Update workflows"
+    description="Update workflows"
+    source="1000"
+    destination="1001"
+    handler="mx.lims.upgrades.upgrade_workflow"
+    sortkey="1"
+    profile="mx.lims:default"
+    />
+  <genericsetup:upgradeStep
+    title="Update registry"
+    description="Update registry"
+    source="1001"
+    destination="1002"
+    handler="mx.lims.upgrades.upgrade_registry"
+    sortkey="1"
+    profile="mx.lims:default"
+    />
+  <genericsetup:upgradeStep
+    title="Update types"
+    description="Update types"
+    source="1002"
+    destination="1003"
+    handler="mx.lims.upgrades.upgrade_type"
+    sortkey="1"
+    profile="mx.lims:default"
+    />
+  <genericsetup:upgradeStep
+    title="Update colvis"
+    description="Update colvis"
+    source="1003"
+    destination="1004"
+    handler="mx.lims.upgrades.upgrade_registry"
+    sortkey="1"
+    profile="mx.lims:default"
+    />
+  <genericsetup:upgradeStep
+    title="Instruments"
+    description="Update instrument-related types"
+    source="1004"
+    destination="1005"
+    handler="mx.lims.upgrades.upgrade_type"
+    sortkey="1"
+    profile="mx.lims:default"
+    />
+  <genericsetup:upgradeStep
+    title="Instruments"
+    description="Update instrument type and behaviors"
+    source="1005"
+    destination="1006"
+    handler="mx.lims.upgrades.upgrade_type"
+    sortkey="1"
+    profile="mx.lims:default"
+    />
+  <genericsetup:upgradeStep
+    title="Upgrade Instruments"
+    description="Update control panel for instruments"
+    source="1006"
+    destination="1007"
+    handler="mx.lims.upgrades.upgrade_instruments"
+    sortkey="1"
+    profile="mx.lims:default"
+    />
+  <genericsetup:upgradeStep
+    title="Upgrade Suppliers"
+    description="Update control panel for suppliers"
+    source="1007"
+    destination="1008"
+    handler="mx.lims.upgrades.upgrade_suppliers"
+    sortkey="1"
+    profile="mx.lims:default"
+    />
+</configure>

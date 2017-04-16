@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="mx.lims">
+  <adapter
+      for="mx.lims.interfaces.IMethod"
+      provides=".interfaces.IMethodRelations"
+      factory=".relations.MethodRelations"
+    />
+  <adapter
+      for="mx.lims.interfaces.IInstrument"
+      provides=".interfaces.IInstrumentRelations"
+      factory=".relations.InstrumentRelations"
+    />
+</configure>
