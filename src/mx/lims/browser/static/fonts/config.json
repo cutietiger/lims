@@ -11,6 +11,24 @@
       "css": "calibrations",
       "code": 59393,
       "src": "fontawesome"
+    },
+    {
+      "uid": "d7b214265bfe7138768bb8b9f62b759a",
+      "css": "certifications",
+      "code": 59395,
+      "src": "typicons"
+    },
+    {
+      "uid": "07c8bfac1a39b6c62bc83e23a3c4b706",
+      "css": "suppliers",
+      "code": 62151,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "bc6ef9c6531c54e927e9dc18e45524b2",
+      "css": "instruments",
+      "code": 59456,
+      "src": "maki"
     }
   ]
 }
